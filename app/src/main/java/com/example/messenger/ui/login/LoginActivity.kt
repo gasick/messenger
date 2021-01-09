@@ -1,5 +1,6 @@
 package com.example.messenger.ui.login
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,28 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
         bindViews()
     }
 
+    override fun showProgress() {
+        progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideProgress() {
+        progressBar.visibility = View.GONE
+    }
+
+    override fun setUsernameError() {
+        etUsername.error = "Username field cannot be empty"
+    }
+
+    override fun setPasswordError() {
+        etPassword.error = "Password field cannot be empty"
+    }
+
+    override fun navigateToSingUp() {
+    }
+
+    override fun navigatetoHome() {
+    }
+
     override fun bindViews() {
         etUsername = findViewById(R.id.et_username)
         etPassword = findViewById(R.id.et_password)
@@ -42,7 +65,7 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
     override fun onClick(view: View?) {
     }
 
-    override fun getContext(): Context{
+    override fun getContext(): Context {
         return this
     }
 }
