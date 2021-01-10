@@ -2,7 +2,7 @@ package com.example.messenger.remote.repository
 
 import com.example.messenger.ui.data.vo.UserListVO
 import com.example.messenger.ui.data.vo.UserVO
-import java.util.*
+import io.reactivex.Observable
 
 interface UserRepository {
 

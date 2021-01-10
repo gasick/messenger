@@ -1,4 +1,4 @@
-package com.example.messenger
+package com.example.messenger.ui.signup
 
 import android.content.Context
 import android.content.Intent
@@ -9,11 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.messenger.R
 import com.example.messenger.ui.data.local.AppPreferences
-import com.example.messenger.ui.signup.SignUpInteractorImpl
-import com.example.messenger.ui.signup.SignUpPreseneter
-import com.example.messenger.ui.signup.SignUpPresenterImpl
-import com.example.messenger.ui.signup.SignUpView
 
 class SignUpActivity :
         AppCompatActivity(),

@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.messenger.service.MessengerApiService
 import com.example.messenger.ui.data.local.AppPreferences
 import com.example.messenger.ui.data.vo.ConversationVO
-import java.util.*
+import io.reactivex.Observable
 
 class ConversationRepositoryImpl(ctx: Context): ConverstationRepository {
     private val preferences: AppPreferences = AppPreferences.create(ctx)

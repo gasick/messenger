@@ -1,6 +1,6 @@
 package com.example.messenger.ui.signup
 
-import com.example.messenger.ui.BaseView
+import com.example.messenger.ui.base.BaseView
 import com.example.messenger.ui.auth.AuthView
 
 interface SignUpView: BaseView, AuthView {

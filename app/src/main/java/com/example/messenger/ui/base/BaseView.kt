@@ -1,4 +1,4 @@
-package com.example.messenger.ui
+package com.example.messenger.ui.base
 
 import android.content.Context
 

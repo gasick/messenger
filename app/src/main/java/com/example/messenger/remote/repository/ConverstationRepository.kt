@@ -1,7 +1,7 @@
 package com.example.messenger.remote.repository
 
 import com.example.messenger.ui.data.vo.ConversationVO
-import java.util.*
+import io.reactivex.Observable
 
 interface ConverstationRepository {
     fun findConversationById(id: Long): Observable<ConversationVO>

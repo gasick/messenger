@@ -5,17 +5,18 @@ import com.example.messenger.remote.request.MessageRequestObject
 import com.example.messenger.remote.request.StatusUpdateRequestObject
 import com.example.messenger.remote.request.UserRequestObject
 import com.example.messenger.ui.data.vo.*
+import io.reactivex.Observable
 import okhttp3.ResponseBody
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import java.util.*
 
 interface MessengerApiService {
     @POST("login")
     @Headers("Content-Type: application/json")
-    fun login(@Body user: LoginRequestObject): Observable<retrofit2.Response<ResponseBody>>
+    fun login(@Body user: LoginRequestObject): Observable<Response<ResponseBody>>
 
    @POST("users/registrations")
    fun createUser(@Body user: UserRequestObject): Observable<UserVO>

@@ -12,7 +12,7 @@ class SignUpPresenterImpl(
 {
 
     private val interactor: SignUpInteractor = SignUpInteractorImpl()
-    override var preferences: AppPreferences = AppPreferences.create(view.getContext)
+    override var preferences: AppPreferences = AppPreferences.create(view.getContext())
 
     override fun executeSignUp(
         username: String,
