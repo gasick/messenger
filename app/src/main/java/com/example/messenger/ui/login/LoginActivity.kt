@@ -1,6 +1,8 @@
 package com.example.messenger.ui.login
 
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +11,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.messenger.R
+import com.example.messenger.ui.data.local.AppPreferences
 
 class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
 
@@ -17,6 +20,8 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp:Button
     private lateinit var progressBar: ProgressBar
+    private lateinit var presenter: LoginPresenter
+    private lateinit var preferences: AppPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +47,12 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
     }
 
     override fun navigateToSingUp() {
+        startActivity(Intent(this, SignUpActivity::class.java))
     }
 
     override fun navigatetoHome() {
+        finish()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     override fun bindViews() {
@@ -62,7 +70,15 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
         Toast.makeText(this, "Invalid username or password cobmination.", Toast.LENGTH_LONG).show()
     }
 
-    override fun onClick(view: View?) {
+    override fun onClick(view: View) {
+        if (view.id == R.id.btn_login){
+            presenter.executeLogin(
+                etUsername.text.toString(),
+                etPassword.text.toString()
+            )
+        } else if (view.id == R.id.btn_sign_up){
+            navigateToSingUp()
+        }
     }
 
     override fun getContext(): Context {
