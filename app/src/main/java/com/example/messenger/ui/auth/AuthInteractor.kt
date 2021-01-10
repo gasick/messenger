@@ -10,7 +10,7 @@ interface AuthInteractor {
     var submittedUsername: String
     var submittedPassword: String
 
-    interface onAuthFihishedListener{
+    interface onAuthFinishedListener{
         fun onAuthSuccess()
         fun onAuthError()
         fun onUsernameError()

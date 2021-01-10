@@ -5,7 +5,7 @@ import com.example.messenger.ui.data.local.AppPreferences
 
 class LoginPresenterImpl(private val view: LoginView):
         LoginPresenter,
-        AuthInteractor.onAuthFihishedListener,
+        AuthInteractor.onAuthFinishedListener,
         LoginInteractor.OnDetailsRetrievalFinishedListener {
     private val interactor: LoginInteractor = LoginInteractorImpl()
     private val preferences: AppPreferences = AppPreferences.create(view.getContext())

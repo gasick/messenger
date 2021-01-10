@@ -12,12 +12,12 @@ interface SignUpInteractor: AuthInteractor {
         fun onError()
     }
 
-    fun singUp(
+    fun signUp(
         username: String,
         phoneNumber: String,
         password: String,
         listener: OnSignUpFinishedListener
     )
 
-    fun getAuthorization(listener: AuthInteractor.onAuthFihishedListener)
+    fun getAuthorization(listener: AuthInteractor.onAuthFinishedListener)
 }

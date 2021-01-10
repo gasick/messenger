@@ -11,7 +11,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.*
-import com.example.messenger.ui.data.vo.UserVO as UserVO1
 
 interface MessengerApiService {
     @POST("login")
@@ -19,7 +18,7 @@ interface MessengerApiService {
     fun login(@Body user: LoginRequestObject): Observable<retrofit2.Response<ResponseBody>>
 
    @POST("users/registrations")
-   fun createUser(@Body user: UserRequestObject): Observable<UserVO1>
+   fun createUser(@Body user: UserRequestObject): Observable<UserVO>
 
    @GET("users")
    fun listUsers(@Headers("Authorization") authorization: String): Observable<UserListVO>
@@ -28,16 +27,16 @@ interface MessengerApiService {
    fun updateStatus(
        @Body request: StatusUpdateRequestObject,
        @Headers("Authorization") authorization: String
-   ): Observable<UserVO1>
+   ): Observable<UserVO>
 
    @GET("users/{userId}")
    fun showUser(
        @Path("userId") userId: Long,
        @Headers("Authorization") authorization: String
-   ): Observable<UserVO1>
+   ): Observable<UserVO>
 
    @GET("users/details")
-   fun echoDetails(@Headers("Authorization") authorization: String): Observable<UserVO1>
+   fun echoDetails(@Headers("Authorization") authorization: String): Observable<UserVO>
 
    @POST("message")
    fun createMessage(

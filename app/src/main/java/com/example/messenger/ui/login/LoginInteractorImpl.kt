@@ -19,7 +19,7 @@ class LoginInteractorImpl: LoginInteractor {
     override fun login(
         username: String,
         password: String,
-        listener: AuthInteractor.onAuthFihishedListener
+        listener: AuthInteractor.onAuthFinishedListener
     ) {
         when {
             username.isBlank() -> listener.onUsernameError()
