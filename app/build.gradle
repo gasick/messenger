@@ -62,4 +62,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.github.stfalcon:chatkit:0.2.2'
 }
